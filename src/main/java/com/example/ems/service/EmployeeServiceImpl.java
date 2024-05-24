@@ -12,26 +12,32 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     private final EmployeeRepository employeeRepository;
 
+
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
+    @Override
     public Employee createEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
+    @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
+    @Override
     public Optional<Employee> getEmployeeById(int id) {
         return employeeRepository.findById(id);
     }
 
+    @Override
     public Employee updateEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
+    @Override
     public void deleteEmployee(int id) {
         employeeRepository.deleteById(id);
     }

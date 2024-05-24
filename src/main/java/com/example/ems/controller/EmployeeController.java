@@ -2,7 +2,7 @@ package com.example.ems.controller;
 
 import com.example.ems.exception.ResourceNotFoundException;
 import com.example.ems.model.Employee;
-import com.example.ems.service.EmployeeService;
+import com.example.ems.service.EmployeeServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +14,9 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class EmployeeController {
 
-    private final EmployeeService employeeService;
+    private final EmployeeServiceImpl employeeService;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeServiceImpl employeeService) {
         this.employeeService = employeeService;
     }
 
