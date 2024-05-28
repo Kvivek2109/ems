@@ -1,0 +1,27 @@
+.nav-bar {
+  background-color: #e65100;
+}
+.nav-bar ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.nav-bar ul li {
+  display: inline-block;
+  cursor: pointer;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  margin: auto 24px;
+}
+.nav-bar ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav-bar ul li a:hover {
+  text-decoration: underline;
+}
