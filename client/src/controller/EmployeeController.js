@@ -1,6 +1,6 @@
-export const createEmployee = async (employee) => {
+export const saveEmployee = async (employee) => {
   try {
-    const response = await fetch('http://localhost:8081/api/employee', {
+    const response = await fetch('http://localhost:8080/api/employees/employee', {
       method: 'Post',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(employee) 
@@ -19,7 +19,7 @@ export const createEmployee = async (employee) => {
 
 export const employeeList = async () => {
   try {
-    const response = await fetch('http://192.168.61.1:8081/api/employees');
+    const response = await fetch('http://192.168.61.1:8080/api/employees/list');
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -31,7 +31,7 @@ export const employeeList = async () => {
 
 export const getEmployeeById = async (id) => {
   try {
-    const response = await fetch('http://localhost:8081/api/'+id);
+    const response = await fetch('http://localhost:8080/api/employees/'+id);
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -43,7 +43,7 @@ export const getEmployeeById = async (id) => {
 
 export const updateEmployeeById = async (id, employee) => {
   try {
-    const response = await fetch('http://localhost:8081/api/'+id, {
+    const response = await fetch('http://localhost:8080/api/employees/'+id, {
     method: 'Put',
     headers: {'Content-type': 'application/json'},
     body: JSON.stringify(employee)
@@ -61,7 +61,7 @@ export const updateEmployeeById = async (id, employee) => {
 
 export const deleteEmployeeById = async (id) => {
   try {
-    const response = await fetch(`http://localhost:8081/api/${id}`, {
+    const response = await fetch(`http://localhost:8080/api/employees/${id}`, {
       method: 'Delete'
     });
     if(!response.ok) {
@@ -69,7 +69,7 @@ export const deleteEmployeeById = async (id) => {
       throw new Error(`Server error: ${response.status}`)
     }
     const result = response.text();
-    alert( result);
+    alert( "Employee Deleted Successfully");
     return result;
   } catch (error) {
     console.error('Error deleting data: ', error);

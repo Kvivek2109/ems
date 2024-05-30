@@ -9,11 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/employees")
 public class EmployeeController {
 
     private final EmployeeServiceImpl employeeService;
@@ -23,35 +22,34 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee")
-    public ResponseEntity<EmployeeDTO> createEmployee(@RequestBody EmployeeDTO employeeDTO) {
-        return new ResponseEntity<>(employeeService.createEmployee(employeeDTO), HttpStatus.CREATED);
+    public ResponseEntity<EmployeeDTO> saveEmployee(@RequestBody EmployeeDTO employeeDTO) {
+        return new ResponseEntity<>(employeeService.saveEmployee(employeeDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/list")
     public ResponseEntity<List<EmployeeDTO>> getAllEmployees() {
         return new ResponseEntity<>(employeeService.getAllEmployees(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EmployeeDTO> getEmployeeById(@PathVariable int id) {
-        Optional<EmployeeDTO> employee = employeeService.getEmployeeById(id);
-        if(employee.isPresent()) {
-            return new ResponseEntity<>(employee.get(), HttpStatus.OK);
+    public ResponseEntity<EmployeeDTO> getEmployeeById(@PathVariable Long id) {
+        EmployeeDTO employee = employeeService.getEmployeeById(id);
+        if(employee != null) {
+            return new ResponseEntity<>(employee, HttpStatus.OK);
         } else {
             throw new ResourceNotFoundException("Employee", "Id", id);
         }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EmployeeDTO> updateEmployee(@PathVariable int id,
+    public ResponseEntity<EmployeeDTO> updateEmployee(@PathVariable Long id,
                                                    @RequestBody Employee employeeDetails) {
-        Optional<EmployeeDTO> currentEmployee = employeeService.getEmployeeById(id);
-        if (currentEmployee.isPresent()) {
-            EmployeeDTO employee = currentEmployee.get();
-            employee.setEmail(employeeDetails.getEmail());
-            employee.setFirstName(employeeDetails.getFirstName());
-            employee.setLastName(employeeDetails.getLastName());
-            EmployeeDTO updatedEmployeeDTO = employeeService.updateEmployee(employee);
+        EmployeeDTO currentEmployee = employeeService.getEmployeeById(id);
+        if (currentEmployee != null) {
+            currentEmployee.setEmail(employeeDetails.getEmail());
+            currentEmployee.setFirstName(employeeDetails.getFirstName());
+            currentEmployee.setLastName(employeeDetails.getLastName());
+            EmployeeDTO updatedEmployeeDTO = employeeService.updateEmployee(currentEmployee);
             return new ResponseEntity<>(updatedEmployeeDTO, HttpStatus.OK);
         } else {
             throw new ResourceNotFoundException("Employee", "Id", id);
@@ -59,9 +57,9 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteEmployee(@PathVariable int id) {
-        Optional<EmployeeDTO> employee = employeeService.getEmployeeById(id);
-        if (employee.isPresent()) {
+    public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
+        EmployeeDTO employee = employeeService.getEmployeeById(id);
+        if (employee!= null) {
             employeeService.deleteEmployee(id);
             return new ResponseEntity<>("Employee Deleted Successfully.", HttpStatus.OK);
         } else {

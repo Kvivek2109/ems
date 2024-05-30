@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createEmployee } from '../controller/EmployeeController';
+import { saveEmployee } from '../controller/EmployeeController';
 
 function Register() {
 
@@ -19,7 +19,7 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createEmployee(formData);
+    saveEmployee(formData);
     setFormData({ firstName: '', lastName: '', email: '' });
   };
 
