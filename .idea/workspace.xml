@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0055ed0-6d7e-4b27-8d4a-a70ba5904f12" name="Changes" comment="push fron inteelij" />
+    <list default="true" id="f0055ed0-6d7e-4b27-8d4a-a70ba5904f12" name="Changes" comment="added frontend using vite">
+      <change beforePath="$PROJECT_DIR$/server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +31,7 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Vivek Karhale/Practice/ems",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -64,6 +70,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="push fron inteelij" />
-    <option name="LAST_COMMIT_MESSAGE" value="push fron inteelij" />
+    <MESSAGE value="added frontend using vite" />
+    <option name="LAST_COMMIT_MESSAGE" value="added frontend using vite" />
   </component>
 </project>
