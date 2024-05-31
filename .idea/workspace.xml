@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0055ed0-6d7e-4b27-8d4a-a70ba5904f12" name="Changes" comment="added frontend using vite" />
+    <list default="true" id="f0055ed0-6d7e-4b27-8d4a-a70ba5904f12" name="Changes" comment="added frontend using vite">
+      <change beforePath="$PROJECT_DIR$/server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +75,7 @@
       <workItem from="1716591597603" duration="22000" />
       <workItem from="1717102841392" duration="697000" />
       <workItem from="1717186082297" duration="921000" />
-      <workItem from="1717190226707" duration="302000" />
+      <workItem from="1717190226707" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="push fron inteelij">
       <option name="closed" value="true" />
@@ -115,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717190457088</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added frontend using vite">
+      <option name="closed" value="true" />
+      <created>1717190735936</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717190735936</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
